@@ -59,8 +59,9 @@ jobs:
           $Version = $Version -replace 'v', ''
           # '+' symbols are invalid characters in image tags
           $Version = $Version -replace '\+', '_'
-          $Version | Set-Content VERSION -PassThru
-
+          # $Version | Set-Content VERSION -PassThru
+          $Version = "0.30.1"
+          
           make build-all
 
           # GH requires all files to have different names, so add version/arch to differentiate
